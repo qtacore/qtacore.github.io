@@ -1,1 +1,106 @@
-<!DOCTYPE html><html lang="zh-CN"><head>  <meta charset="utf-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge">  <meta name="viewport" content="width=device-width, initial-scale=1">  <title>QT4W Demo测试页面</title>  <link href="/css/bootstrap.min.css" rel="stylesheet">  <style>  label {    padding-top: 8px;    font-weight: 100;    color: #666666;  }    input[type=text] {    display: inline;    width: 200px;  }    input[type=radio] {    margin-top: 10px;  }    button {    margin-top: 20px;    width: 150px;  }    .form-item {    margin-top: 10px;  }  </style></head><body>  <script src="/js/jquery.min.js"></script>  <script src="/js/bootstrap.min.js"></script>  <div class="panel panel-default">     <div class="panel-heading">表单Demo</div>      <div class="panel-body">        <form class="form" id="form1" action="welcome.html">           <div class="form-item col-xs-12">            <label for="name" class="col-xs-1">用户名：</label>            <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户名">          </div>          <div class="form-item col-xs-12">            <label for="sex" class="col-xs-1">性别：</label>            <input type="radio" name="sex" id="sex" value="male" checked> 男            <input type="radio" name="sex" id="sex" value="female" style="margin-left: 40px;"> 女          </div>          <div class="form-item col-xs-12">            <label for="age" class="col-xs-1">年龄：</label>            <select class="form-control" id="age" name="age" style="width: 150px;">              <option>15</option>              <option>16</option>              <option>17</option>              <option>18</option>              <option>19</option>              <option>20</option>              <option>21</option>              <option>22</option>              <option>23</option>              <option>24</option>              <option>25</option>              <option>26</option>              <option>27</option>              <option>28</option>              <option>29</option>              <option>30</option>              <option>31</option>              <option>32</option>              <option>33</option>              <option>34</option>              <option>35</option>              <option>36</option>              <option>37</option>              <option>38</option>              <option>39</option>              <option>40</option>            </select>          </div>          <div class="form-item col-xs-12">            <label for="company" class="col-xs-1">公司：</label>            <input type="text" class="form-control" id="company" name="company" placeholder="请输入公司名">          </div>                      <button type="submit" class="btn btn-default col-md-offset-1" id="submit">提 交</button>        </form>      </div>  </div>  <script>    $('#submit').click(function(){      var name = $('#name').val();      if(!name) {        alert('用户名不能为空！');        return false;      }      var sex = $('sex').val() == 'male'?'先生':'女士';      var company = $('#company').val();      if(!company) {        alert('公司名不能为空！');        return false;      }    });  </script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QT4W Demo测试页面</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  label {
+    padding-top: 8px;
+    font-weight: 100;
+    color: #666666;
+  }
+  
+  input[type=text] {
+    display: inline;
+    width: 200px;
+  }
+  
+  input[type=radio] {
+    margin-top: 10px;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 150px;
+  }
+  
+  .form-item {
+    margin-top: 10px;
+  }
+  </style>
+</head>
+<body>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <div class="panel panel-default"> 
+    <div class="panel-heading">表单Demo</div>
+      <div class="panel-body">
+        <form class="form" id="form1" action="welcome.html"> 
+          <div class="form-item col-xs-12">
+            <label for="name" class="col-xs-1">用户名：</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户名">
+          </div>
+          <div class="form-item col-xs-12">
+            <label for="sex" class="col-xs-1">性别：</label>
+            <input type="radio" name="sex" id="sex" value="male" checked> 男
+            <input type="radio" name="sex" id="sex" value="female" style="margin-left: 40px;"> 女
+          </div>
+          <div class="form-item col-xs-12">
+            <label for="age" class="col-xs-1">年龄：</label>
+            <select class="form-control" id="age" name="age" style="width: 150px;">
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+              <option>32</option>
+              <option>33</option>
+              <option>34</option>
+              <option>35</option>
+              <option>36</option>
+              <option>37</option>
+              <option>38</option>
+              <option>39</option>
+              <option>40</option>
+            </select>
+          </div>
+          <div class="form-item col-xs-12">
+            <label for="company" class="col-xs-1">公司：</label>
+            <input type="text" class="form-control" id="company" name="company" placeholder="请输入公司名">
+          </div>            
+          <button type="submit" class="btn btn-default col-md-offset-1" id="submit">提 交</button>
+        </form>
+      </div>
+  </div>
+  <script>
+    $('#submit').click(function(){
+      var name = $('#name').val();
+      if(!name) {
+        alert('用户名不能为空！');
+        return false;
+      }
+      var sex = $('sex').val() == 'male'?'先生':'女士';
+      var company = $('#company').val();
+      if(!company) {
+        alert('公司名不能为空！');
+        return false;
+      }
+    });
+  </script>
+</body>
+</html>
