@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>欢迎您：</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <script>
+    var url = location.href;
+    var name = '';
+    var sex = '';
+    var age = 0;
+    var company = '';
+    var pos = url.indexOf('?');
+    if(pos > 0) {
+      var param = url.substr(pos + 1);
+      var items = param.split('&');
+      for(var i=0;i<items.length;i++) {
+        var pos = items[i].indexOf('=');
+        if(pos > 0) {
+          var key = items[i].substring(0, pos);
+          var value = items[i].substr(pos + 1);
+          switch(key) {
+            case 'name':
+              name = decodeURI(value);
+              break;
+            case 'sex':
+              sex = value;
+              break;
+            case 'age':
+              age = parseInt(value);
+              break;
+            case 'company':
+              company = decodeURI(value);
+              break;
+          }
+        }
+      }
+      if(name) {
+        document.title += name;
+      }
+      if(sex == 'male') {
+        document.title += '先生';
+      }else if(sex == 'female') {
+        document.title += '女士';
+      }
+    }
+  </script>
+  <style>
+  label {
+    color: #666666;
+  }
+  
+  #profile {
+    margin-top: 60px;
+    font-size: 20px;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <div id="profile">
+    <h1 style="color: red;">提交成功！</h1>
+    <h2 style="margin-top: 80px;">您的个人资料为：</h2>
+    <div class="col-xs-12" style="margin-top: 40px;">
+     <div class="col-xs-5"></div>
+      <label class="col-xs-1">用户名：</label>
+      <div id="name" class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12">
+      <div class="col-xs-5"></div>
+      <label class="col-xs-1">性别：</label>
+      <div id="sex" class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12">
+      <div class="col-xs-5"></div>
+      <label class="col-xs-1">年龄：</label>
+      <div id="age" class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12">
+      <div class="col-xs-5"></div>
+      <label class="col-xs-1">公司：</label>
+      <div id="company" class="col-xs-2"></div>
+    </div>
+  </div>
+  <script>
+    $('#name').text(name);
+    $('#sex').text(sex == 'male'?'男':'女');
+    $('#age').text(age);
+    $('#company').text(company);
+  </script>
+</body>
+</html>
