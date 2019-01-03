@@ -50,40 +50,39 @@
   <style>
   label {
     color: #666666;
+    min-width: 150px;
   }
   
   #profile {
+    width: 600px;
     margin-top: 60px;
     font-size: 20px;
     text-align: center;
   }
+  
   </style>
 </head>
 <body>
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <div id="profile">
+  <div class="center-block" id="profile">
     <h1 style="color: red;">提交成功！</h1>
     <h2 style="margin-top: 80px;">您的个人资料为：</h2>
-    <div class="col-xs-12" style="margin-top: 40px;">
-     <div class="col-xs-5"></div>
-      <label class="col-xs-1">用户名：</label>
-      <div id="name" class="col-xs-2"></div>
+    <div class="col-xs-12 center-block" style="margin-top: 40px;">
+      <label class="col-xs-6">用户名：</label>
+      <div id="name" class="col-xs-6"></div>
     </div>
-    <div class="col-xs-12">
-      <div class="col-xs-5"></div>
-      <label class="col-xs-1">性别：</label>
-      <div id="sex" class="col-xs-2"></div>
+    <div class="col-xs-12 center-block">
+      <label class="col-xs-6">性别：</label>
+      <div id="sex" class="col-xs-6"></div>
     </div>
-    <div class="col-xs-12">
-      <div class="col-xs-5"></div>
-      <label class="col-xs-1">年龄：</label>
-      <div id="age" class="col-xs-2"></div>
+    <div class="col-xs-12 center-block">
+      <label class="col-xs-6">年龄：</label>
+      <div id="age" class="col-xs-6"></div>
     </div>
-    <div class="col-xs-12">
-      <div class="col-xs-5"></div>
-      <label class="col-xs-1">公司：</label>
-      <div id="company" class="col-xs-2"></div>
+    <div class="col-xs-12 center-block">
+      <label class="col-xs-6">公司：</label>
+      <div id="company" class="col-xs-6"></div>
     </div>
   </div>
   <script>
